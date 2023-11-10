@@ -1,0 +1,204 @@
+object Form1: TForm1
+  Left = 765
+  Height = 594
+  Top = 194
+  Width = 702
+  Caption = 'Easy LDAP - Version .06B2T - Program by Von Wallace'
+  ClientHeight = 0
+  ClientWidth = 0
+  Position = poScreenCenter
+  LCLVersion = '1.6.0.4'
+  object GroupBox1: TGroupBox
+    Left = 8
+    Height = 288
+    Top = 8
+    Width = 688
+    Caption = 'Query'
+    ClientHeight = 263
+    ClientWidth = 684
+    TabOrder = 0
+    object Button1: TButton
+      Left = 580
+      Height = 25
+      Top = 14
+      Width = 91
+      Caption = 'Run Query'
+      OnClick = Button1Click
+      TabOrder = 0
+      TabStop = False
+    end
+    object Server: TEdit
+      Left = 110
+      Height = 28
+      Top = 16
+      Width = 202
+      TabOrder = 1
+      Text = '192.168.10.117'
+    end
+    object Label1: TLabel
+      Left = 15
+      Height = 20
+      Top = 16
+      Width = 41
+      Caption = 'Server'
+      ParentColor = False
+    end
+    object Port: TSpinEdit
+      Left = 358
+      Height = 28
+      Top = 16
+      Width = 85
+      MaxValue = 65535
+      TabOrder = 2
+      Value = 389
+    end
+    object Label2: TLabel
+      Left = 326
+      Height = 20
+      Top = 16
+      Width = 27
+      Caption = 'Port'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 15
+      Height = 20
+      Top = 110
+      Width = 29
+      Caption = 'Path'
+      ParentColor = False
+    end
+    object Path: TEdit
+      Left = 110
+      Height = 28
+      Top = 110
+      Width = 442
+      TabOrder = 7
+      Text = 'ou=Dallas,o=Pace'
+    end
+    object Label4: TLabel
+      Left = 16
+      Height = 20
+      Top = 142
+      Width = 39
+      Caption = 'Query'
+      ParentColor = False
+    end
+    object Query: TMemo
+      Left = 110
+      Height = 116
+      Top = 142
+      Width = 561
+      Lines.Strings = (
+        '(&(objectclass=user)(logindisabled=true))'
+      )
+      ScrollBars = ssAutoBoth
+      TabOrder = 8
+    end
+    object Button3: TButton
+      Left = 580
+      Height = 25
+      Top = 46
+      Width = 75
+      Caption = 'Defaults'
+      OnClick = Button3Click
+      TabOrder = 6
+      TabStop = False
+    end
+    object Label5: TLabel
+      Left = 15
+      Height = 20
+      Top = 46
+      Width = 109
+      Caption = 'User Name (DN)'
+      ParentColor = False
+    end
+    object Label6: TLabel
+      Left = 15
+      Height = 20
+      Top = 77
+      Width = 62
+      Caption = 'Password'
+      ParentColor = False
+    end
+    object username: TEdit
+      Left = 110
+      Height = 28
+      Top = 46
+      Width = 202
+      Enabled = False
+      TabOrder = 3
+      Text = 'cn=username,ou=DALLAS,o=PACE'
+    end
+    object password: TEdit
+      Left = 110
+      Height = 28
+      Top = 77
+      Width = 202
+      EchoMode = emPassword
+      Enabled = False
+      HideSelection = False
+      PasswordChar = '*'
+      TabOrder = 4
+    end
+    object CheckBox: TCheckBox
+      Left = 326
+      Height = 24
+      Top = 74
+      Width = 310
+      Caption = 'Anonymous Login (No Password Exchange)'
+      Checked = True
+      OnChange = CheckBoxChange
+      State = cbChecked
+      TabOrder = 5
+    end
+    object CheckBoxsasl: TCheckBox
+      Left = 326
+      Height = 24
+      Top = 56
+      Width = 247
+      Caption = 'Bind with SASL (Secure Password)'
+      TabOrder = 9
+      Visible = False
+    end
+    object CheckBoxautotls: TCheckBox
+      Left = 326
+      Height = 24
+      Top = 40
+      Width = 194
+      Caption = 'Auto TLS (Secure Session)'
+      TabOrder = 10
+      Visible = False
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 8
+    Height = 281
+    Top = 304
+    Width = 688
+    Caption = 'Result'
+    ClientHeight = 256
+    ClientWidth = 684
+    TabOrder = 1
+    object Results: TMemo
+      Left = 8
+      Height = 216
+      Top = 6
+      Width = 663
+      ReadOnly = True
+      ScrollBars = ssAutoBoth
+      TabOrder = 1
+      TabStop = False
+    end
+    object Button2: TButton
+      Left = 524
+      Height = 25
+      Top = 230
+      Width = 147
+      Caption = 'Copy to Clipboard'
+      OnClick = Button2Click
+      TabOrder = 0
+      TabStop = False
+    end
+  end
+end
