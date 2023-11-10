@@ -251,9 +251,9 @@ procedure TForm1.Button3Click(Sender: TObject);
 begin
   server.Text := '192.168.10.117';
   port.Value := 389;
-  Path.Text := 'ou=Dallas,o=Pace';
+  Path.Text := 'ou=Dallas,o=Company';
   query.Text := '(&(objectclass=user)(logindisabled=true))';
-  username.Text := 'cn=username,ou=DALLAS,o=PACE';
+  username.Text := 'cn=username,ou=DALLAS,o=Company';
   checkboxsasl.Checked := True;
   checkbox.Checked := True;
   checkboxautotls.Checked := False;
@@ -264,7 +264,7 @@ procedure TForm1.CheckBoxChange(Sender: TObject);
 begin
   if checkbox.Checked then
   begin
-    //username.Text := 'cn=username,ou=DALLAS,o=PACE';
+   
     username.Enabled := False;
     password.Text := '';
     password.Enabled := False;
@@ -272,7 +272,6 @@ begin
   end
   else
   begin
-    //username.Text := 'cn=username,ou=DALLAS,o=PACE';
     username.Enabled := True;
     password.Text := '';
     password.Enabled := True;
